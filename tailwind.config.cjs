@@ -1,60 +1,56 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "./src/**/*.{html,js}"],
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
+        "lg": "900px",
         "2xl": "1400px",
       },
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "#04365c",
+        input: "#04365c",
+        ring: "#04365c",
+        background: "#ffffff",
+        foreground: "#000000",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#406c8a",
+          foreground: "#c6e1f5",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#ffffff",
+          foreground: "#04365c",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "#cac8d0",
+          foreground: "#04365c",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#ebedf2",
+          foreground: "#04365c",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#eeedf6",
+          foreground: "#04365c",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "#cac8d0",
+          foreground: "#04365c",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "#cac8d0",
+          foreground: "#04365c",
         },
       },
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
@@ -71,6 +67,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    
   },
   plugins: [require("tailwindcss-animate")],
 }

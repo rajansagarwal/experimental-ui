@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&display=swap');
+
+body, main, h1, p {
+  font-family: 'Instrument Serif', serif;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -77,5 +83,24 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    
+  }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-8 h-8 bg-muted rounded-full font-medium text-center text-base inline-flex items-center justify-center -indent-px;
+    @apply ml-[-41px];
+    content: counter(step);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
   }
 }
